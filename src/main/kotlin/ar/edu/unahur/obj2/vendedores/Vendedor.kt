@@ -28,6 +28,8 @@ abstract class Vendedor {
   fun otrasCertificaciones() = certificaciones.count { !it.esDeProducto }
 
   fun puntajeCertificaciones() = certificaciones.sumBy { c -> c.puntaje }
+
+  fun esGenerico() = this.certificaciones.any{ !it.esDeProducto }
 }
 
 // En los parámetros, es obligatorio poner el tipo
